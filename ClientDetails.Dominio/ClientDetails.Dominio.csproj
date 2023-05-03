@@ -4,4 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entidades\TipoTarefaEnum.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Enumerados\TipoTarefaEnum.cs" />
+  </ItemGroup>
+
 </Project>
