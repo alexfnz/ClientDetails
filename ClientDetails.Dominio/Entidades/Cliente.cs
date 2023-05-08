@@ -23,7 +23,5 @@ namespace ClientDetails.Dominio.Entidades
         public string CodSistema { get; set; }
 
         public string CodExterno { get; set; }
-
-        public ICollection<Contato> Contatos { get; set; }
     }
 }

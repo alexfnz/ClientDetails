@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "",
+    "ClientDetailsDB": "server=localhost;uid=root;pwd=toor;database=ClientDetailsDB"
+  }
+}

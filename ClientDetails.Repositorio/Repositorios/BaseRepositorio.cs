@@ -1,45 +1,50 @@
 ﻿using ClientDetails.Dominio.Contratos;
-using System;
+using ClientDetails.Repositorio.Contexto;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace ClientDetails.Repositorio.Repositorios
 {
     public class BaseRepositorio<TEntity> : IBaseRepositorio<TEntity> where TEntity : class
     {
-        public BaseRepositorio()
-        {
+        private readonly ClientDetailsContexto ClientDetailsContexto;
 
+        public BaseRepositorio(ClientDetailsContexto clientDetailsContexto)
+        {
+            ClientDetailsContexto = clientDetailsContexto;
         }
 
         public void Adicionar(TEntity entity)
         {
-            throw new NotImplementedException();
+            ClientDetailsContexto.Set<TEntity>().Add(entity);
+            ClientDetailsContexto.SaveChanges();
         }
 
         public void Atualizar(TEntity entity)
         {
-            throw new NotImplementedException();
+            ClientDetailsContexto.Set<TEntity>().Update(entity);
+            ClientDetailsContexto.SaveChanges();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            ClientDetailsContexto.Dispose();
         }
 
         public TEntity ObterPorId(int id)
         {
-            throw new NotImplementedException();
+            return ClientDetailsContexto.Set<TEntity>().Find(id);
         }
 
         public IEnumerable<TEntity> ObterTodos()
         {
-            throw new NotImplementedException();
+            return ClientDetailsContexto.Set<TEntity>().ToList();
         }
 
         public void Remover(TEntity entity)
         {
-            throw new NotImplementedException();
+            ClientDetailsContexto.Remove(entity);
+            ClientDetailsContexto.SaveChanges();
         }
     }
 }
