@@ -1,1 +1,41 @@
-<h1>Hello, world!</h1>
+<p *ngIf="!contatos">Carregando...</p>
+<!--
+<p *ngIf="!contatos">Carregando Contatos...</p>
+<p *ngIf="!tarefas">Carregando Tarefas...</p>
+<p *ngIf="!cliente">Carregando Clientes...</p> -->
+
+<table class="table table-hover" *ngIf="contatos">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cargo</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let c of contatos">
+      <td>{{c.nome}}</td>
+      <td>{{c.cargo}}</td>
+      <td>{{c.telefone}}</td>
+      <td>{{c.email}}</td>
+      <td><button class="btn btn-primary mb-2" (click)="editar(c)">Editar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- 
+<div *ngFor="let c of contatos">
+  {{c.nome}} || {{c.cargo}} || {{c.telefone}} || {{c.email}} 
+</div>
+
+<div *ngFor="let t of tarefas">
+  {{t.id}} || {{t.tipoTarefa}} || {{t.dataExecucao}} || {{t.colaborador}}
+</div>
+
+<div *ngFor="let cl of cliente">
+  {{cl.nome}} ||  {{cl.telefone}} || {{cl.email}} || {{cl.endereco}} || {{cl.segmento}} || {{cl.cnpj}} || {{cl.codSistema}} || {{cl.codExterno}}
+</div> -->

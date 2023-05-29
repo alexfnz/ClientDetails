@@ -21,7 +21,7 @@ namespace ClientDetails.Web.Controllers
         {
             try
             {
-                return Ok(_contatoRepositorio.ObterTodos());
+                return Json(_contatoRepositorio.ObterTodos());
             }
             catch (Exception ex)
             {

@@ -5,11 +5,11 @@ using System;
 namespace ClientDetails.Web.Controllers
 {
     [Route("api/[controller]")]
-    public class TarefaCotroller : Controller
+    public class TarefaController : Controller
     {
         private readonly ITarefaRepositorio _tarefaRepositorio;
 
-        public TarefaCotroller(ITarefaRepositorio tarefaRepositorio)
+        public TarefaController(ITarefaRepositorio tarefaRepositorio)
         {
             _tarefaRepositorio = tarefaRepositorio;
         }
@@ -19,7 +19,7 @@ namespace ClientDetails.Web.Controllers
         {
             try
             {
-                return Ok(_tarefaRepositorio.ObterTodos());
+                return Json(_tarefaRepositorio.ObterTodos());
             }
             catch (Exception ex)
             {

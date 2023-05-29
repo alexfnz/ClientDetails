@@ -19,7 +19,7 @@ namespace ClientDetails.Web.Controllers
         {
             try
             {
-                return Ok(_clienteRepositorio.ObterTodos());
+                return Json(_clienteRepositorio.ObterTodos());
             }
             catch (Exception ex)
             {
